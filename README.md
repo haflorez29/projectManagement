@@ -1,36 +1,88 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Project Management Application
 
-## Getting Started
+## Overview
+This is a project management application built with Next.js, Prisma, and NextAuth. It allows users to create accounts, manage projects, and track tasks within those projects.
 
-First, run the development server:
+## Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- User authentication (register, login, logout)
+- Project creation and management
+- Task creation and management within projects
+- Responsive design using Tailwind CSS
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Prerequisites
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Before you begin, ensure you have the following installed:
+- Node.js (v14 or later)
+- npm (v6 or later)
+- PostgreSQL
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Setup
 
-## Learn More
+1. Clone the repository: 
+- git clone [https://github.com/your-username/project-management-app.git](https://github.com/your-username/project-management-app.git)
+- cd project-management-app
 
-To learn more about Next.js, take a look at the following resources:
+2. Install dependencies:
+- Install dependencies:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. Set up your environment variables:
+Replace `your_username`, `your_password`, and `your_nextauth_secret` with your actual PostgreSQL credentials and a secure random string for NextAuth.
+DATABASE_URL="postgresql://your_username:your_password@localhost:5432/project_management_db?schema=public"
+NEXTAUTH_SECRET="your_nextauth_secret"
+NEXTAUTH_URL="http://localhost:3000"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+4. Set up the database:
+- npx prisma db push
 
-## Deploy on Vercel
+5. Start the development server:
+- npm run dev
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+6. Open your browser and navigate to `http://localhost:3000`
+
+## Usage
+
+### User Registration
+1. Navigate to `/register`
+2. Fill in your name, email, and password
+3. Click "Register"
+
+### User Login
+1. Navigate to `/login`
+2. Enter your email and password
+3. Click "Sign In"
+
+### Creating a Project
+1. After logging in, go to the dashboard
+2. Click "Create New Project"
+3. Fill in the project name and description
+4. Click "Create Project"
+
+### Viewing Projects
+1. After logging in, your projects will be displayed on the dashboard
+
+## Project Structure
+
+- `/app`: Contains the main application code
+- `/api`: API routes for authentication, projects, and tasks
+- `/components`: Reusable React components
+- `/dashboard`: Dashboard page
+- `/login`: Login page
+- `/register`: Registration page
+- `/projects`: Project-related pages
+- `/prisma`: Contains the Prisma schema and migrations
+
+## Technologies Used
+
+- Next.js 14
+- React
+- TypeScript
+- Prisma
+- NextAuth.js
+- Tailwind CSS
+- PostgreSQL
+
+## Contact
+
+Your Name - heidyflorez55@gmail.com
